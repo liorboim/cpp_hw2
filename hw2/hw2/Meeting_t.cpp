@@ -10,8 +10,6 @@
 #include <iostream>
 template class Meeting_t < int > ;
 template class Meeting_t < float >;
-template class Meeting_t < double >;
-
 template <typename T>
 void Meeting_t<T>::debuf(const Meeting_t<T>& p_meeting){
     if (*this == p_meeting)

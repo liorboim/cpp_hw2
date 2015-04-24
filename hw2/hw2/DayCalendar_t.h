@@ -10,7 +10,7 @@ public:
     void insert(float i);
     
     
-    //std::vector<Meeting_t<T>> first;
+    std::vector<Meeting_t<T>> first;
 private:
     
     
