@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>31280110-F68B-4697-8058-52E431CF02C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D86AC35EDBBA7BF8A9FE207F0C1889CA696CA6A9</key>
+		<string>https://github.com/liorboim/cpp_hw2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>hw2/hw2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D86AC35EDBBA7BF8A9FE207F0C1889CA696CA6A9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/liorboim/cpp_hw2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D86AC35EDBBA7BF8A9FE207F0C1889CA696CA6A9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D86AC35EDBBA7BF8A9FE207F0C1889CA696CA6A9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hw2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
