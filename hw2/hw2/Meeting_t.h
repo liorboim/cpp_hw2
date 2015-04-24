@@ -10,39 +10,59 @@ class Meeting_t{
 
 
 public:
-    Meeting_t(T p_start, T p_end, std::string p_topic){
-        m_endHour   = p_end;
-        m_StartHour = p_start;
+    Meeting_t( std::string p_topic){
+        
         m_topic     = p_topic;
     };
+    
+    void initialize_meetinig(T p_start, T p_end);
     
     
     //build	~Meeting_t();
     bool operator==(const Meeting_t<T>& meeting) const;
     
-    friend std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj);
     
     
     inline const std::string& getTopic() const{
         return m_topic;
     }
     
-    inline T getStart() const{
-        return m_StartHour;
+    inline T getStartTime() const{
+        return m_StartTime;
     };
     
-    inline T getEnd() const{
-        return m_endHour;
+    inline T getEndTime() const{
+        return m_endTime;
     };
     
+   
+protected:
     
+    inline void setStartTime(T p_time){
+        m_StartTime = p_time;
+    }
+    inline void setEndTime(T p_time){
+        m_endTime = p_time;
+    }
     
 private:
-    T m_StartHour;
-    T m_endHour;
+    T m_StartTime;
+    T m_endTime;
     std::string m_topic;
 };
 
+
+template <typename T>
+void Meeting_t<T>::initialize_meetinig(T p_start, T p_end) {
+    if (p_start > p_end){
+        
+        char e[100] = "Error: can't set meeting with - start time > end time";
+        throw  e;
+    }
+    
+    setStartTime(p_start);
+    setEndTime(p_end);
+}
 
 
 template <typename T>
@@ -54,14 +74,14 @@ bool Meeting_t<T>::operator==(const Meeting_t<T>& p_meeting) const{
     }
     
     
-    if (    getEnd() >= p_meeting.getStart() &&
-            getStart() <= p_meeting.getStart()){
+    if (    getEndTime() >= p_meeting.getStartTime() &&
+            getStartTime() <= p_meeting.getStartTime()){
         return true;
     }
     
     
-    if (    p_meeting.getEnd() >= getStart() &&
-            p_meeting.getStart() <= getStart()){
+    if (    p_meeting.getEndTime()   >= getStartTime() &&
+            p_meeting.getStartTime() <= getStartTime()){
         return true;
     }
     
@@ -72,10 +92,11 @@ bool Meeting_t<T>::operator==(const Meeting_t<T>& p_meeting) const{
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj)
 {
-    os << "Name:" << obj.getName()
-     << "Address: " << obj.getStart()
-     << "Phone: " << obj.getEnd()
-     << "topic:" << obj.getTopic(); 
+    os  << "Meeting topic: "    << obj.getTopic()
+        << ", Start hour: "    << obj.getStartTime()
+        << ", End hour: "       << obj.getEndTime()
+        << std::endl;
+    
     return os;
 }
 
