@@ -8,16 +8,32 @@
 
 #include <iostream>
 #include "DayCalendar_t.h"
-#include "Meeting_t.h"
 #include <exception>
 
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Meeting_t<float> *m1 = new Meeting_t<float>(1.0,2.6,"hello");
+    Meeting_t<float> m1("hello1");
     
-    Meeting_t<float> *m2 = new Meeting_t<float>(1.5,2.5,"hello");
+    Meeting_t<float> m2("hello1");
+    
+    try{
+        m1.initialize_meetinig(2, 3);
+        m2.initialize_meetinig(4, 2.4);
+    }catch(char * e){
+        cout << e;
+    }
+    
+    
+    cout << m1 << m2;
+    
+    if (m1 == m2){
+        cout << "overlapping";
+    }else{
+        cout << "not overlapping";
+
+    }
    
     /*  DayCalendar_t<float> *day=new  DayCalendar_t<float>();
        std::vector<Meeting_t<float>>::iterator it = day->first.begin() ;
