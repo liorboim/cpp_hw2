@@ -1,5 +1,5 @@
 hw2/hw2.xcodeproj/*
 *.pbxproj
-
+hw2.xcodeproj/project.pbxproj
 .DS_Store
 
