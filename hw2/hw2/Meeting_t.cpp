@@ -8,8 +8,10 @@
 
 #include "Meeting_t.h"
 #include <iostream>
+
 template class Meeting_t < int > ;
 template class Meeting_t < float >;
+
 template <typename T>
 void Meeting_t<T>::debuf(const Meeting_t<T>& p_meeting){
     if (*this == p_meeting)
@@ -29,6 +31,8 @@ bool Meeting_t<T>::operator==(const Meeting_t<T>& p_meeting) const{
     //else there is an overlap
     return true;
 }
+
+
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj)
 {
@@ -43,7 +47,13 @@ std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj)
 
 template <typename T>
 std::string Meeting_t<T>::getTopic(){ return m_topic; }
+
 template <typename T>
-T Meeting_t<T>::getStart(){ return m_StartHour; }
+T Meeting_t<T>::getStart(){
+    return m_StartHour;
+}
+
 template <typename T>
-T Meeting_t<T>::getEnd(){ return m_endHour; }
+T Meeting_t<T>::getEnd(){
+    return m_endHour;
+}
