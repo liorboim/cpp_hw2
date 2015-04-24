@@ -1,5 +1,9 @@
-#include <string>
 
+#ifndef hw2_Meeting_h
+#define hw2_Meeting_h
+
+#include <string>
+#include <iostream>
 
 template <class T>
 class Meeting_t{
@@ -14,13 +18,22 @@ public:
     
     
     //build	~Meeting_t();
-    bool operator==(const Meeting_t<T>& meeting) const
+    bool operator==(const Meeting_t<T>& meeting) const;
+    
+    friend std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj);
     
     
-    void debuf(const Meeting_t<T>& p_meeting);
-    std::string getTopic();
-    T getStart();
-    T getEnd();
+    inline const std::string& getTopic() const{
+        return m_topic;
+    }
+    
+    inline T getStart() const{
+        return m_StartHour;
+    };
+    
+    inline T getEnd() const{
+        return m_endHour;
+    };
     
     
     
@@ -32,13 +45,43 @@ private:
 
 
 
-//template <typename T>
-//std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj);
+template <typename T>
+bool Meeting_t<T>::operator==(const Meeting_t<T>& p_meeting) const{
+    
+    if (this == &p_meeting){
+        //the same object.
+        return true;
+    }
+    
+    
+    if (    getEnd() >= p_meeting.getStart() &&
+            getStart() <= p_meeting.getStart()){
+        return true;
+    }
+    
+    
+    if (    p_meeting.getEnd() >= getStart() &&
+            p_meeting.getStart() <= getStart()){
+        return true;
+    }
+    
+    return false;
+}
 
-/**class BaseMeet 
- {
-	BaseMeet(){};
- };
- */
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const Meeting_t<T>& obj)
+{
+    os << "Name:" << obj.getName()
+     << "Address: " << obj.getStart()
+     << "Phone: " << obj.getEnd()
+     << "topic:" << obj.getTopic(); 
+    return os;
+}
+
+
+
+#endif
+
 
 
